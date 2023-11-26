@@ -1,0 +1,27 @@
+.Card {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5%;
+}
+.card_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Card_mid {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.Card_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
