@@ -1,6 +1,8 @@
 import './App.css';
 import Board from './components/boards/Board';
 
+
+
 function App() {
   return (
     <div className="app">
@@ -9,10 +11,6 @@ function App() {
       </div>
       <div className="app_boards_outer">
         <div className="app_boards">
-          <Board />
-          <Board />
-          <Board />
-          <Board />
           <Board />
         </div>
       </div>  

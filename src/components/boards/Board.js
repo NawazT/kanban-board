@@ -3,6 +3,8 @@ import Card from '../cards/Card'
 import './Board.css'
 import { MoreHorizontal, Plus } from 'react-feather'
 
+
+
 function Board() {
   return (
     <div className='board'>
