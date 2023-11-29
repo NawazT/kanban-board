@@ -35,7 +35,7 @@ function Board({ grouping, sorting }) {
       const sortedTickets = orderData(groupedTickets, sorting);
       setOrderedTickets(sortedTickets);
     }
-  }, [ticketsData, grouping, sorting]);
+  }, [ticketsData, grouping, sorting, isLoading]);
 
   return (
     <div className="board">
