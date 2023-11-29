@@ -10,6 +10,7 @@ function Board({ grouping, sorting }) {
   const [ticketsData, setTicketsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [orderedTickets, setOrderedTickets] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,9 @@ function Board({ grouping, sorting }) {
       const response = await axios.get('https://api.quicksell.co/v1/internal/frontend-assignment');
       const fetchedData = response.data;
       console.log('Fetched data:', fetchedData);
+
+      const usersData = fetchedData.users;
+      setUsers(usersData);
 
       setTicketsData(fetchedData);
       setIsLoading(false);
@@ -43,13 +47,15 @@ function Board({ grouping, sorting }) {
           return (
             <div key={status}>
               <div className="board_top">
-                <p className="board_top_title">{status}</p>
+                <p className="board_top_title">
+                  {grouping === 'userId' && users.find((user) => user.id === status)?.name || status}
+                </p>
+
                 <Plus />
                 <MoreHorizontal />
               </div>
               <div className="board_cards">
                 {tickets.map((ticket) => (
-                  // Render each ticket as a Card component
                   <Card
                     key={ticket.id}
                     ticketId={ticket.id}
@@ -58,6 +64,7 @@ function Board({ grouping, sorting }) {
                     ticketStatus={ticket.status}
                     ticketTag={ticket.tag}
                     ticketUserId={ticket.userId}
+                    users = {users}
                   />
                 ))}
               </div>

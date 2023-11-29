@@ -1,28 +1,33 @@
 import React from 'react' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import Chips from '../chips/Chips'
 import './Card.css'
 
-function Card({ ticketId, ticketTitle, ticketPriority, ticketStatus, ticketTag, ticketUserId }) {
+function Card({ ticketId, ticketTitle, ticketPriority, ticketStatus, ticketTag, ticketUserId, users }) {
+  const cardStyle = {
+    borderColor: ticketPriority === 4 ? 'red' : '#ccc'
+  };
+  const user = users.find((user) => user.id === ticketUserId);
+  const availabilityClass = user ? (user.available ? 'available' : '') : '';
   return (
-    <div className='Card'> 
+    <div className='Card' style={cardStyle}> 
       <div className='card_top'>
         <div className="Card_Id"> 
-            <Chips text = {ticketId} />
+             {ticketId}
         </div>
-        <div className='Card_User'>
-            <div className="User_name">
-                <FontAwesomeIcon icon={faCircleUser} />
+        <div className= {`Card_User ${availabilityClass}`}>
+            <div className= "User_name">
+                <FontAwesomeIcon icon={faCircleUser}  size="lg"/>
             </div>
             <div className="User_acticity">
-                    <p></p>
+            {user && user.available && (
+              <div className="User_acticity_indicator"></div>
+                )}
             </div>
         </div>
       </div>
       <div className="Card_mid">
         <div className="Card_progress">
-            {/* <Chips icon = <loader/> </>/> */}
         </div>
         <div className="Card_title">
             <h3>{ticketTitle}</h3>
