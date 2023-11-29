@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+Kanban Board Project
+This project is a comprehensive Kanban Board application that allows users to effectively visualize and manage their tasks. It seamlessly integrates data from the provided API (https://github.com/abhinav-anshul/quicksell) and offers a user-friendly interface for organizing and tracking tasks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Data Fetching and Grouping:
 
-## Available Scripts
+Fetches data from the API (https://api.quicksell.co/v1/internal/frontend-assignment)
+Groups tickets based on status, user, or priority
+Provides three distinct grouping modes:
+Status: Group tickets based on their current status (Open, In Progress, Done)
+User: Arrange tickets according to the assigned user
+Priority: Group tickets based on their priority level (High, Medium, Low)
+Ticket Sorting:
 
-In the project directory, you can run:
+Offers two sorting options:
+Priority: Arrange tickets in descending order of priority
+Title: Sort tickets in ascending order based on their title
+Responsive Design:
 
-### `npm start`
+Adapts seamlessly to different screen sizes and devices
+Ensures optimal user experience across various platforms
+Visually Appealing Interface:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Adheres to the provided screenshots for a consistent and appealing design
+Utilizes a clean and intuitive layout for easy navigation
+Deployment
+The Kanban Board application is deployed using GitHub Pages, ensuring easy access and availability.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Demo Link: https://nawazt.github.io/kanban-board/
 
-### `npm test`
+Installation
+Clone the repository:
+Bash
+git clone https://github.com/topics/kanban-board
+Use code with caution. Learn more
+Install the dependencies:
+Bash
+cd kanban-board
+npm install
+Use code with caution. Learn more
+Run the development server:
+Bash
+npm start
+Use code with caution. Learn more
+This will start the development server and open the Kanban Board in your web browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Contributing
+We welcome contributions to this project. Please follow these guidelines when contributing:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Fork the repository.
+Create a new branch for your changes.
+Make your changes.
+Commit your changes.
+Push your changes to your fork.
+Create a pull request from your branch to the upstream repository.
+We will review your pull request and merge it into the upstream repository if it is approved.
