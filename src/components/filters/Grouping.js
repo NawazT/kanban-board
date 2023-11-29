@@ -5,8 +5,7 @@ const GroupingComponent = ({ onGroupingChange }) => {
     <div className="grouping-options">
       <label>Group By:</label>
       <select onChange={(event) => onGroupingChange(event.target.value)}>
-        <option value="none">None</option>
-        <option value="user">User</option>
+        <option value="userId">User</option>
         <option value="priority">Priority</option>
         <option value="status">Status</option>
       </select>

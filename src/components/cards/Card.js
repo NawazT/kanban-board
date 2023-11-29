@@ -1,30 +1,28 @@
 import React from 'react' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import { loader } from 'react-feather'
 import Chips from '../chips/Chips'
 import './Card.css'
 
-function Card() {
+function Card({ticket}) {
   return (
     <div className='Card'> 
       <div className='card_top'>
         <div className="Card_Id"> 
-            <Chips text = "CAM-1"/>
+            <Chips text = {ticket.id} />
         </div>
         <div className='Card_User'>
             <div className="User_name">
                 <FontAwesomeIcon icon={faCircleUser} />
             </div>
             <div className="User_acticity">
-                    <p>Avl</p>
+                    <p></p>
             </div>
         </div>
       </div>
       <div className="Card_mid">
         <div className="Card_progress">
             {/* <Chips icon = <loader/> </>/> */}
-            <loader />
         </div>
         <div className="Card_title">
             <h2> CARD TITLE </h2>

@@ -1,5 +1,11 @@
-function orderData(data, sortBy) {
-    const sortedData = data.tickets.sort((a, b) => {
+export default function orderData(data, sortBy) {
+  const sortedData = [];
+
+  console.log('inside sort function')
+  console.log(sortBy)
+
+  for (const [status, tickets] of Object.entries(data)) {
+    const sortedTickets = tickets.sort((a, b) => {
       switch (sortBy) {
         case 'priority':
           return a.priority - b.priority;
@@ -9,6 +15,9 @@ function orderData(data, sortBy) {
           throw new Error('Invalid sortBy parameter');
       }
     });
-  
-    return sortedData;
+
+    sortedData.push({ status, tickets: sortedTickets });
   }
+
+  return sortedData;
+}
