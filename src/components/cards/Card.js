@@ -4,12 +4,12 @@ import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import Chips from '../chips/Chips'
 import './Card.css'
 
-function Card({ticket}) {
+function Card({ ticketId, ticketTitle, ticketPriority, ticketStatus, ticketTag, ticketUserId }) {
   return (
     <div className='Card'> 
       <div className='card_top'>
         <div className="Card_Id"> 
-            <Chips text = {ticket.id} />
+            <Chips text = {ticketId} />
         </div>
         <div className='Card_User'>
             <div className="User_name">
@@ -25,16 +25,16 @@ function Card({ticket}) {
             {/* <Chips icon = <loader/> </>/> */}
         </div>
         <div className="Card_title">
-            <h2> CARD TITLE </h2>
+            <h3>{ticketTitle}</h3>
         </div>
       </div>
 
       <div className="Card_bottom">
         <div className="Card_priority">
-            <p>4</p>
+            <p>{ticketPriority}</p>
         </div>
         <div className="Card_tags">
-            <p>Feature Request</p>
+        <p>{ticketTag}</p>
         </div>
       </div>
     </div>

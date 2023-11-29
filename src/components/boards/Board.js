@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import groupData from '../helpers/gorupData';
 import orderData from '../helpers/orderData';
+import Card from '../cards/Card';
 import './Board.css';
 import { MoreHorizontal, Plus } from 'react-feather';
 
@@ -33,35 +34,38 @@ function Board({ grouping, sorting }) {
   }, [ticketsData, grouping, sorting]);
 
   return (
-      <div>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <div className='board'>
-            {orderedTickets.map((group) => {
-              const { status, tickets } = group;
-              return (
-                <div key={status}>
-                  <div className="board_top">
-                    <p className="board_top_title">
-                    <h2>{status}</h2>
-                    </p>
-                    <Plus />
-                    <MoreHorizontal />
-                  </div>
-                  {tickets.map((ticket) => (
-                    <div key={ticket.id}>
-                      <div className="board_cards">
-                       <p>{ticket.title}</p>
-                      </div>
-                   </div>
-                  ))}
-                </div>
-              );
-            })}
-          </div>
-        )}
-      </div>
+    <div className="board">
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        orderedTickets.map((group) => {
+          const { status, tickets } = group;
+          return (
+            <div key={status}>
+              <div className="board_top">
+                <p className="board_top_title">{status}</p>
+                <Plus />
+                <MoreHorizontal />
+              </div>
+              <div className="board_cards">
+                {tickets.map((ticket) => (
+                  // Render each ticket as a Card component
+                  <Card
+                    key={ticket.id}
+                    ticketId={ticket.id}
+                    ticketTitle={ticket.title}
+                    ticketPriority={ticket.priority}
+                    ticketStatus={ticket.status}
+                    ticketTag={ticket.tag}
+                    ticketUserId={ticket.userId}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })
+      )}
+    </div>
   );
 }
 
